@@ -30,11 +30,11 @@ export class EmployeeFormComponent {
     }
   }
 
-  public logout(){
+  public ALL(){
     this.service.getAll();
   }  
 
-  public All(){
+  public logout(){
     this.authService.logout();
     this.router.navigate(['/login']);
   }
