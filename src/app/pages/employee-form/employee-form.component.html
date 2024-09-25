@@ -1,0 +1,15 @@
+<div class="login-card">
+
+  <div class="card-title">
+      <h1>Add New Employee</h1>
+      <span><a routerLink="/list">List</a></span>
+      <span (click)="logout()">Logout</span>
+  </div>
+  <form class="form-group" [formGroup]="EmployeeForm" (ngSubmit)="onSubmit()">
+      <input type="text" name="name" placeholder="Name" formControlName="name">
+      <input type="email" formControlName="email" placeholder="email">
+      <input type="number" formControlName="phone" placeholder="phone">
+      <button>Submit</button>
+  </form>
+
+</div>

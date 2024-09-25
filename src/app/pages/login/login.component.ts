@@ -17,7 +17,7 @@ export class LoginComponent {
   router = inject(Router);
 
   protected loginForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
+    name: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required])
   })
 
@@ -27,11 +27,14 @@ export class LoginComponent {
       this.authService.login(this.loginForm.value)
       .subscribe((data: any) => {
         if(this.authService.isLoggedIn()){
-          this.router.navigate(['/admin']);
+          console.log('change')
+          this.router.navigate(['/list']);
         }
         console.log(data);
       });
     }
   }
+
+  
 
 }
